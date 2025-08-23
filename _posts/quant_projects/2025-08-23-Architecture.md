@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "예시 포스트"
 date: 2024-01-01
 categories: [quant]

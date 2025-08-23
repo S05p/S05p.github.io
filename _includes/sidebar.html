@@ -1,27 +1,14 @@
 <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ '/' | relative_url }}">
-          {{ site.title }}
-        </a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
-    </div>
-
-    <div class="sidebar-section">
-      <h3>카테고리</h3>
-      <ul class="category-list">
-        {% for category in site.categories %}
-          <li>
-            <a href="{{ '/category/' | append: category[0]  | append: '/' | relative_url }}">
-              {{ category[0] | capitalize }} ({{ category[1].size }})
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  <div class="sidebar-content">
+    <h3>카테고리</h3>
+    <ul class="category-list">
+      {% for category in site.categories %}
+        <li>
+          <a href="/{{ category[0] }}/">
+            {{ category[0] | capitalize }} ({{ category[1].size }})
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>

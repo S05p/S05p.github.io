@@ -1,13 +1,17 @@
 ---
 layout: default
+permalink: /quant/
 pagination:
   enabled: true
   per_page: 5
 ---
 
-<div class="home-page{% unless paginator.total_pages > 1 %} no-pagination{% endunless %}">
+<div class="home-page">
+  <h1>퀀트 프로젝트</h1>
+  
   <div class="posts">
-    {% for post in paginator.posts %}
+    {% assign quant_posts = site.posts | where: "categories", "quant" %}
+    {% for post in quant_posts %}
       <article class="post-preview">
         <header class="post-preview-header">
           <div class="post-title-row">
@@ -30,14 +34,14 @@ pagination:
     {% endfor %}
   </div>
 
-  <!-- 메인 페이지 페이지네이션 -->
+  <!-- 퀀트 카테고리 페이지네이션 -->
   {% if paginator.total_pages > 1 %}
     <nav class="pagination">
       <ul class="pagination-list">
         {% if paginator.previous_page %}
           <li class="pagination-item">
             <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">
-              ‹
+              &lsaquo; 이전
             </a>
           </li>
         {% endif %}
@@ -59,7 +63,7 @@ pagination:
         {% if paginator.next_page %}
           <li class="pagination-item">
             <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">
-              ›
+              다음 &rsaquo;
             </a>
           </li>
         {% endif %}
