@@ -9,7 +9,7 @@ permalink: pretty
 title: S05p's Blog
 tagline: 'A Jekyll theme'
 description: '주니어 백엔드 개발자<br>김강섭의 블로그'
-baseurl: '/'
+baseurl: '/S05p.github.io'
 url: 'https://s05p.github.io'
 
 author:
