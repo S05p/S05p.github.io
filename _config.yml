@@ -15,8 +15,6 @@ author:
   name:           'S05p'
   url:            https://github.com/s05p
 
-paginate:         5
-
 github:
   repo:           https://github.com/poole/hyde
 
@@ -24,3 +22,25 @@ collections:
   Quant_project:
     output: true
     permalink: _posts/quant_projects/:name/
+
+
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ':title - page :num'
+  sort_field: 'date'
+  sort_reverse: true
+
+autopages:
+  enabled: true
+  categories:
+    enabled: true
+    layouts:
+      - 'category.html'
+    title: ':cat'
+    permalink: '/category/:cat/'
+    per_page: 5

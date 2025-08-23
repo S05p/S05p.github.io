@@ -3,35 +3,48 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
+<div class="home-header sticky">
+  <h1 class="page-title">Latest Posts</h1>
+</div>
+
+<div class="post-list">
   {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
+    <article class="post-card">
+      <h3 class="post-card__title">{{ post.title }}</h3>
+      <p class="post-card__desc">
+        {% if post.description %}
+          {{ post.description }}
+        {% else %}
+          {{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}
+        {% endif %}
+      </p>
+    </article>
   {% endfor %}
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
+<div class="pager">
   {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% if paginator.previous_page == 1 %}
+      <a class="pager__prev" href="{{ '/' | relative_url }}">← Prev</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+      <a class="pager__prev" href="{{ '/page' | append: paginator.previous_page | relative_url }}">← Prev</a>
     {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+
+  <span class="pager__info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a class="pager__next" href="{{ '/page' | append: paginator.next_page | relative_url }}">Next →</a>
   {% endif %}
 </div>
+
+<style>
+.sticky{ position: sticky; top: 0; background:#fff; z-index: 10; padding-top:8px; }
+.post-list{ display:grid; gap:16px; margin:16px 0 24px; }
+.post-card{ border:1px solid #e5e7eb; border-radius:12px; padding:16px 18px; background:#fff; }
+.post-card__title{ margin:0 0 8px; font-size:18px; line-height:1.35; color:#111827; }
+.post-card__desc{ margin:0; font-size:14px; color:#4b5563; }
+.pager{ display:flex; align-items:center; gap:12px; justify-content:center; margin:20px 0 8px; }
+.pager__prev,.pager__next{ text-decoration:none; border:1px solid #e5e7eb; padding:6px 10px; border-radius:8px; }
+.pager__info{ color:#6b7280; font-size:14px; }
+</style>

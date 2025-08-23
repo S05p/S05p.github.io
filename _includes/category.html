@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="category-page">
+  <!-- 디버깅 정보 -->
+  <div class="debug-info" style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem;">
+    <h3>디버깅 정보</h3>
+    <p>page.autopages: {{ page.autopages }}</p>
+    <p>page.autopages.display_name: {{ page.autopages.display_name }}</p>
+    <p>page.title: {{ page.title }}</p>
+    <p>paginator: {{ paginator }}</p>
+    <p>paginator.posts size: {{ paginator.posts.size }}</p>
+    <p>paginator.total_posts: {{ paginator.total_posts }}</p>
+    <p>현재 페이지 URL: {{ page.url }}</p>
+  </div>
+
+  <header class="category-header">
+    <h1>
+      {% if page.autopages.display_name %}
+        {{ page.autopages.display_name }}
+      {% elsif page.title %}
+        {{ page.title }}
+      {% else %}
+        카테고리
+      {% endif %}
+    </h1>
+    <p class="category-description">
+      {% if paginator.total_posts %}
+        총 {{ paginator.total_posts }}개의 글이 있습니다.
+      {% else %}
+        글이 없습니다.
+      {% endif %}
+    </p>
+  </header>
+  
+  <div class="posts">
+    {% if paginator.posts.size > 0 %}
+      {% for post in paginator.posts %}
+        <article class="post-preview">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p>{{ post.date | date: "%Y년 %m월 %d일" }}</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        </article>
+      {% endfor %}
+    {% else %}
+      <p>이 카테고리에 글이 없습니다.</p>
+      
+      <!-- 전체 카테고리 확인 -->
+      <h3>전체 카테고리 목록:</h3>
+      <ul>
+        {% for category in site.categories %}
+          <li>{{ category[0] }} ({{ category[1].size }}개)</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
