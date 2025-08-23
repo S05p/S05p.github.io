@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {% assign cat = page.category | downcase %}
+  {% assign posts = site.categories[cat] | sort: "date" | reverse %}
+
+  {% if posts and posts.size > 0 %}
+    <ul class="posts">
+      {% for post in posts %}
+        <li>
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>해당 카테고리의 글이 없습니다.</p>
+  {% endif %}
+</div>
