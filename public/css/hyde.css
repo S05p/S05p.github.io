@@ -935,3 +935,47 @@ a, a:hover, a:focus, a:active {
     padding-right: 0 !important;
   }
 }
+
+/* Post 박스 좌우 여백 완전 제거 - 최강 스타일 */
+@media (max-width: 768px) {
+  .post-preview {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .posts {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .home-page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .content.container {
+    padding-left: 0.1rem !important;
+    padding-right: 0.1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .main-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
