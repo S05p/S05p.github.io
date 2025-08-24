@@ -1008,3 +1008,68 @@ a, a:hover, a:focus, a:active {
     padding-right: 0.5rem !important;
   }
 }
+
+/* 모바일에서 포스트 박스 좌우 여백 완전 제거 - 최종 해결책 */
+@media (max-width: 768px) {
+  /* 모든 컨테이너 요소의 좌우 여백 완전 제거 */
+  .container,
+  .content,
+  .content.container,
+  .main-container,
+  .page-wrapper,
+  .main-content,
+  .category-page,
+  .home-page,
+  .posts {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Post 박스는 화면 전체 너비 사용, 아주 조금의 내부 여백만 유지 */
+  .post-preview {
+    width: 98% !important;
+    max-width: 98% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+    box-sizing: border-box !important;
+    border-radius: 8px !important;
+  }
+  
+  /* 헤더 컨테이너도 여백 줄이기 */
+  .header-container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  /* 푸터 컨테이너도 여백 줄이기 */
+  .footer-container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* 매우 작은 모바일 화면에서 추가 최적화 */
+@media (max-width: 480px) {
+  .post-preview {
+    width: 96% !important;
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
+  }
+  
+  .header-container {
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
+  }
+  
+  .footer-container {
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
+  }
+}
