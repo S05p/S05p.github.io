@@ -804,3 +804,48 @@ a, a:hover, a:focus, a:active {
   text-decoration-thickness: 0 !important;
   text-underline-offset: 0 !important;
 }
+
+/* GitHub Pages CSS 강제 적용 */
+.post-title {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: #1a252f !important;
+  margin-bottom: 0.6rem !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.post-preview {
+  width: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 드롭다운 강제 적용 */
+.dropdown {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.dropdown-menu {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  background-color: #b3d9ff !important;
+  min-width: 120px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 0 !important;
+  z-index: 1001 !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-item:hover {
+  background-color: #80b3ff !important;
+  color: #000 !important;
+}
