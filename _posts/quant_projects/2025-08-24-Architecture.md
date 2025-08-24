@@ -39,7 +39,7 @@ categories: [quant]
 
 ### BackTest 
 
-1. Market Data로 분석한 데이터를 호출
+1. Market Data로 분석한 데이터를 호출 (사용자가 호출하지 않는 이상 새벽에만)
 2. 해당 데이터로 3일, 7일, 30일, 3개월, 1년 단위로 BackTest 진행
 3. 해당 전략의 유효성 분석
 4. 해당 결과를 사용자 Alarm으로 전달
