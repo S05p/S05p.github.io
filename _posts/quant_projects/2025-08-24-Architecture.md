@@ -1,9 +1,8 @@
 ---
 layout: default
-title: "예시 포스트"
-date: 2024-01-01
+title: "백엔드 설계"
+date: 2025-08-24
 categories: [quant]
 # 또는 categories: quant
 ---
 
-포스트 내용...
