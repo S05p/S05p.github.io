@@ -6,8 +6,8 @@ layout: default
   <div class="main-content">
     <div class="category-page">
       <header class="category-header">
-        <h1>{{ page.autopages.display_name }} 카테고리</h1>
-        <p class="category-description">총 {{ paginator.total_posts }}개의 글이 있습니다.</p>
+        <h1 class="category-title">{{ page.autopages.display_name }}</h1>
+        <span class="post-count">({{ paginator.total_posts }}개)</span>
       </header>
       
       <div class="posts">

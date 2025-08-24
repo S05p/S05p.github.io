@@ -7,7 +7,7 @@ pagination:
 ---
 
 <div class="home-page">
-  <h1>퀀트 프로젝트</h1>
+  <h1>Quant</h1>
   
   <div class="posts">
     {% assign quant_posts = site.posts | where: "categories", "quant" %}
@@ -15,7 +15,7 @@ pagination:
       <article class="post-preview">
         <header class="post-preview-header">
           <div class="post-title-row">
-            <h2>{{ post.title }}</h2>
+            <div class="post-title">{{ post.title }}</div>
             {% if post.categories %}
               {% for category in post.categories %}
                 <a href="/{{ category }}/" class="category-link">{{ category }}</a>

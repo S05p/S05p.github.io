@@ -8,7 +8,7 @@ layout: default
       <article class="post-preview">
         <header class="post-preview-header">
           <div class="post-title-row">
-            <h2>{{ post.title }}</h2>
+            <div class="post-title">{{ post.title }}</div>
             {% if post.categories %}
               {% for category in post.categories %}
                 <a href="/{{ category }}/" class="category-link">{{ category }}</a>

@@ -6,6 +6,8 @@ categories: [quant]
 description: "퀀트 투자(Quantitative Investing)의 개념과 특징을 소개합니다."
 ---
 
+![퀀트 이미지 by chatgpt](/public/images/About_quant_1.jpg)
+
 # 퀀트란 무엇인가?
 
 “퀀트(Quant)”는 Quantitative의 줄임말로, **수학적·통계적 기법과 프로그래밍을 활용하여 투자 전략을 수립하고 실행하는 방식**을 의미합니다.  
