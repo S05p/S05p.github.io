@@ -849,3 +849,15 @@ a, a:hover, a:focus, a:active {
   background-color: #80b3ff !important;
   color: #000 !important;
 }
+
+/* Sticky Header GitHub Pages 강제 적용 */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background-color: #e3f2fd !important;
+  position: -webkit-sticky !important;
+  position: -moz-sticky !important;
+  position: -ms-sticky !important;
+  position: -o-sticky !important;
+}
