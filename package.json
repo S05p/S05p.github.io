@@ -1,0 +1,14 @@
+{
+  "name": "s05p-blog",
+  "version": "1.0.0",
+  "description": "S05p's Jekyll Blog",
+  "scripts": {
+    "dev": "bundle exec jekyll serve --config _config.yml,_config.dev.yml --livereload",
+    "build": "bundle exec jekyll build",
+    "build:prod": "bundle exec jekyll build --config _config.yml",
+    "serve": "bundle exec jekyll serve --config _config.yml,_config.dev.yml"
+  },
+  "keywords": ["jekyll", "blog", "github-pages"],
+  "author": "S05p",
+  "license": "MIT"
+}
