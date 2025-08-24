@@ -979,3 +979,32 @@ a, a:hover, a:focus, a:active {
     width: 100% !important;
   }
 }
+
+/* 컨테이너 박스 좌우 여백 완전 제거 - 핵심 해결 */
+@media (max-width: 768px) {
+  /* 모든 컨테이너 요소의 좌우 여백 제거 */
+  .container,
+  .content,
+  .content.container,
+  .main-container,
+  .page-wrapper,
+  .main-content,
+  .category-page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Post 박스 자체는 적당한 내부 여백만 유지 */
+  .post-preview {
+    width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
