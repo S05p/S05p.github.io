@@ -8,6 +8,9 @@ categories: [quant]
 
 ![Devops 이미지](/public/images/Architecture.jpg)
 
+이번 시간엔 퀀트의 방법론에 따라,\
+백엔드 서버를 어떤 식으로 구성할 지에 대해 기록하겠습니다.
+
 ## Tools
 
 1. Fast-api
