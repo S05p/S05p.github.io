@@ -1,8 +1,5 @@
 ---
 layout: default
-pagination:
-  enabled: true
-  per_page: 5
 ---
 
 <div class="home-page{% unless paginator.total_pages > 1 %} no-pagination{% endunless %}">
@@ -42,15 +39,21 @@ pagination:
           </li>
         {% endif %}
 
-        {% for page in paginator.page_trail %}
-          {% if page.num == paginator.page %}
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
             <li class="pagination-item">
-              <span class="pagination-link current">{{ page.num }}</span>
+              <span class="pagination-link current">{{ page }}</span>
+            </li>
+          {% elsif page == 1 %}
+            <li class="pagination-item">
+              <a href="{{ '/' | relative_url }}" class="pagination-link">
+                {{ page }}
+              </a>
             </li>
           {% else %}
             <li class="pagination-item">
-              <a href="{{ page.path | relative_url }}" class="pagination-link">
-                {{ page.num }}
+              <a href="{{ site.paginate_path | replace: ':num', page | relative_url }}" class="pagination-link">
+                {{ page }}
               </a>
             </li>
           {% endif %}

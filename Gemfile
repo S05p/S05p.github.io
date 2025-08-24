@@ -13,7 +13,7 @@ gem "base64"
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap" 
-  gem "jekyll-paginate-v2"
+  gem "jekyll-paginate"
 end
 
 # Windows 및 JRuby 지원
