@@ -22,7 +22,8 @@ categories: [quant]
 
 ![Architeture 이미지](/public/images/Architecture_2.png)
 
-실제 투자가 진행되므로, Auth가 완성되기 전까지는 VPN 없이 접근 불가능하도록 강력한 보안으로 진행한다.
+매우 소액으로 진행하지만 실제 투자가 진행되므로, 내 증권 API키가 사용된다.\
+Auth가 완성되기 전까지는 VPN 없이 접근 불가능하도록 강력한 보안으로 진행한다.
 
 ### GateWay Server
 
