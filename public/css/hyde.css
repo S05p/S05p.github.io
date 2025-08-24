@@ -861,3 +861,42 @@ a, a:hover, a:focus, a:active {
   position: -ms-sticky !important;
   position: -o-sticky !important;
 }
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  /* 헤더 컨테이너 좌우 여백 줄이기 */
+  .header-container {
+    padding: 0 0.5rem !important;
+  }
+  
+  /* 메인 컨테이너 좌우 여백 줄이기 */
+  .main-container {
+    padding: 0.5rem 0 !important;
+  }
+  
+  /* 콘텐츠 컨테이너 좌우 여백 줄이기 */
+  .content.container {
+    padding: 0 0.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  /* 포스트 프리뷰 좌우 여백 줄이기 */
+  .post-preview {
+    width: 98% !important;
+    padding: 1rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* 포스트 제목 크기 조정 */
+  .post-title {
+    font-size: 1.5rem !important;
+  }
+  
+  /* 카테고리 페이지 h1 여백 줄이기 */
+  .home-page h1 {
+    max-width: 98% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
