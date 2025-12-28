@@ -5,7 +5,7 @@ date: 2025-12-28
 categories: [quant]
 ---
 
-![Fastapi 이미지](/public/images/Architecture(2))
+![아키텍처 v2](/public/images/Architecture(2).png)
 
 다시 생각한 아키텍처 그림이다.
 
