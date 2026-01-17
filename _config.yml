@@ -31,6 +31,7 @@ include:
   - _pages
 
 # Build 설정
+future: true
 exclude:
   - .sass-cache/
   - .jekyll-cache/
