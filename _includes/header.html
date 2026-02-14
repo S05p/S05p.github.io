@@ -16,7 +16,9 @@
       <div class="dropdown">
         <button class="dropdown-toggle">Category <span class="arrow-down">&lt;</span></button>
         <div class="dropdown-menu">
-          <a href="/quant/" class="dropdown-item">Quant (2)</a>
+          {% for category in site.categories %}
+            <a href="/{{ category[0] }}/" class="dropdown-item">{{ category[0] | capitalize }} ({{ category[1].size }})</a>
+          {% endfor %}
         </div>
       </div>
     </nav>

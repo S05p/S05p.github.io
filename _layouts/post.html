@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home-page no-pagination">
+  <div class="posts">
+    <article class="post-preview">
+      <header class="post-preview-header">
+        <div class="post-title-row">
+          <div class="post-title">{{ page.title }}</div>
+          {% if page.categories %}
+            {% for category in page.categories %}
+              <a href="/{{ category }}/" class="category-link">{{ category }}</a>
+            {% endfor %}
+          {% endif %}
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%Y년 %m월 %d일" }}
+          </time>
+        </div>
+      </header>
+
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</div>

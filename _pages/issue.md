@@ -1,14 +1,14 @@
 ---
 layout: default
-permalink: /quant/
+permalink: /issue/
 ---
 
 <div class="home-page">
-  <h1>Quant</h1>
-  
+  <h1>Issue</h1>
+
   <div class="posts">
-    {% assign quant_posts = site.posts | where: "categories", "quant" %}
-    {% for post in quant_posts %}
+    {% assign issue_posts = site.posts | where: "categories", "issue" %}
+    {% for post in issue_posts %}
       <article class="post-preview">
         <header class="post-preview-header">
           <div class="post-title-row">
@@ -23,12 +23,11 @@ permalink: /quant/
             </time>
           </div>
         </header>
-        
+
         <div class="post-content">
           {{ post.content }}
         </div>
       </article>
     {% endfor %}
   </div>
-
 </div>
