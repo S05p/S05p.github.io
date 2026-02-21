@@ -11,6 +11,7 @@ description: "무신사 루키 과제 회고"
 ## 개요
 
 > 무신사 루키 2차 과제의 회고. 수강신청 시스템을 FastAPI + Redis + MariaDB 기반으로 구현했다.
+>
 > 핵심 목표는 동시 다중 요청 환경에서의 **정합성 보장**이었다.
 
 ---
@@ -171,6 +172,7 @@ def _override_enrollment_settings():
 **해결**
 
 > 앱 시작 시점 기준으로 동적 계산하도록 변경했다.
+>
 > - `ENROLLMENT_START_DATE`: 오늘 - 14일
 > - `ENROLLMENT_END_DATE`: 오늘 + 14일
 > - `SEMESTER_START_DATE`: 오늘 + 30일
