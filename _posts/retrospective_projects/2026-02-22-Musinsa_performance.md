@@ -53,9 +53,10 @@ description: "동기/비동기 Redis 구조적 한계, Celery Worker 대기열, 
 
 **문제점**
 
-> - 요청 1건당 Redis 연산 4~6회 (BLPOP, SET, Lua, DEL 등) → 18,000 RPS 기준 약 90,000 ops/sec로 단일 Redis 한계(~100,000 ops/sec)에 근접
 > - 락 경쟁이 심해질수록 타임아웃으로 인한 실패율 급등 (워커를 늘려도 Non-2xx 95% 이상)
 > - 동기 Redis이므로 BLPOP이 스레드를 블로킹 → FastAPI async 장점 미활용, 처리량이 워커 수에 직접 비례
+>   - 비동기 Redis로 전환해도 개선이 없다 — BLPOP 대기 중 코루틴이 커넥션을 점유해 풀 고갈로 이어지고, 처리 코루틴이 늘수록 ops/sec 부담도 가중된다 (상단 **비동기 Redis + BLPOP** 참고)
+>   - 또한, 요청 1건당 Redis 연산 4~6회 (BLPOP, SET, Lua, DEL 등) → 18,000 RPS 기준 약 90,000 ops/sec로 단일 Redis 한계(~100,000 ops/sec)에 근접
 
 ---
 
