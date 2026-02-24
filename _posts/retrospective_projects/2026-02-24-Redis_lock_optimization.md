@@ -6,11 +6,13 @@ categories: [retrospective]
 description: "Lua 스크립트 기반 DECR로 course lock을 제거하고 학생 lock만 남겨 블로킹을 1회로 줄인 설계"
 ---
 
-![Redis Lock 최적화 시퀀스](/public/images/redis_lock_optimization.png)
+![티켓팅 이미지](/public/images/ticketing.jpg)
 
 ## 개요
 
-> 수강신청 시스템의 분산락 구조를 다시 들여다보다가, 블로킹이 2회 발생하는 구조임을 발견했다.
+> 수강신청 시스템의 분산락 구조를 다시 들여다보다가, 블로킹이 2회 발생하는 구조이다.
+>
+> 티켓팅 시스템에서 사용하는 Redis decrease를 사용하면 블로킹을 1회 줄일 수 있어서 해당 방법을 소개하고자 한다.
 >
 > 학생 단위 락과 강좌 단위 락을 각각 BLPOP으로 획득하는데, 강좌 정원 차감은 BLPOP 없이 Lua 스크립트로 원자적으로 처리할 수 있다. 이 아이디어를 정리해봤다.
 
