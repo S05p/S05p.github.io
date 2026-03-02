@@ -15,5 +15,19 @@
 
     {% include footer.html %}
 
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('code.language-mermaid').forEach(function (el) {
+          var container = document.createElement('div');
+          container.className = 'mermaid';
+          container.textContent = el.textContent;
+          el.parentNode.replaceWith(container);
+        });
+        mermaid.run();
+      });
+    </script>
+
   </body>
 </html>
